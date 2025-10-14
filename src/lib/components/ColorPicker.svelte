@@ -228,6 +228,9 @@
 			rgb &&
 			(rgb.r !== _rgb.r || rgb.g !== _rgb.g || rgb.b !== _rgb.b || rgb.a !== _rgb.a || (!hsv && !hex))
 		) {
+			if(Number.isNaN(rgb.r)) rgb.r = 0;
+			if(Number.isNaN(rgb.g)) rgb.g = 0;
+			if(Number.isNaN(rgb.b)) rgb.b = 0;
 			color = colord(rgb);
 			hex = color.toHex();
 			hsv = color.toHsv();
